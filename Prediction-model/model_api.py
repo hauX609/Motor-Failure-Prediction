@@ -5,8 +5,10 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 # Load the trained models
-failure_model = joblib.load('failure_model.pkl')
+
 life_model = joblib.load('life_model.pkl')
+failure_model = joblib.load('failure_model.pkl')
+
 
 # Initialize the Flask application
 app = Flask(__name__)
