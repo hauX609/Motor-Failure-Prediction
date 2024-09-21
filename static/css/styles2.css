@@ -1,0 +1,183 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #ff6f61, #ff3d00);
+    color: white;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Button */
+button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #e68900, #ff7043);
+    transform: scale(1.05);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+table thead {
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    color: white;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    font-weight: 600;
+}
+
+table td img {
+    max-width: 80px;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Alerts Container */
+.alerts-container {
+    margin-top: 2rem;
+}
+
+.alert-box {
+    background: linear-gradient(135deg, #ff5722, #f44336);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-box p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Status Light */
+.status-light {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.status-light.green {
+    background-color: #4caf50;
+}
+
+.status-light.red {
+    background-color: #f44336;
+}
+
+/* Motor Details */
+.motor-details {
+    display: none;
+    padding: 12px;
+    border-top: 1px solid #ddd;
+    background-color: #fafafa;
+    border-radius: 8px;
+}
+
+.motor-box.expanded .motor-details {
+    display: block;
+}
+
+.motor-details span {
+    display: block;
+    padding: 8px;
+    font-size: 0.95rem;
+}
+
+/* Temperature and Speed */
+.motor-details .temp-high {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.motor-details .temp-normal {
+    color: #4caf50;
+    font-weight: 600;
+}
+
+.motor-details .speed-abnormal {
+    color: #f44336;
+    font-weight: 600;
+}
+
+.motor-details .speed-normal {
+    color: #4caf50;
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    table td img {
+        max-width: 60px;
+    }
+}
