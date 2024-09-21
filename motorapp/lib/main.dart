@@ -105,7 +105,7 @@ class PredictionFormState extends State<PredictionForm> {
 
       try {
         final response = await http.post(
-          Uri.parse('http://192.168.0.102:5001/predict'),
+          Uri.parse('https://motor-failure-prediction.onrender.com/predict'),
           headers: {'Content-Type': 'application/json'},
           body: json.encode(motorData),
         );
