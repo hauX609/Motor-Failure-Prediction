@@ -6,8 +6,8 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 # Load the trained models
 
-life_model = joblib.load('life_model.pkl')
-failure_model = joblib.load('failure_model.pkl')
+life_model = joblib.load('Prediction-model/life_model.pkl')
+failure_model = joblib.load('Prediction-model/failure_model.pkl')
 
 
 # Initialize the Flask application
