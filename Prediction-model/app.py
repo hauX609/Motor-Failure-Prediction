@@ -28,7 +28,7 @@ class RequestData(BaseModel):
     motor_data: MotorData = None
     energy_data: EnergyData = None
 
-model = load_model("/Users/harshitgupta/Downloads/Projects/MotorFailure-Prediction/Prediction-model/models/model.pkl")
+model = load_model("Prediction-model/models/model.pkl")
 
 @app.get("/")
 def read_root():
