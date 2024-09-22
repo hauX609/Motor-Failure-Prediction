@@ -91,21 +91,22 @@ class PredictionFormState extends State<PredictionForm> {
       });
 
       final motorData = {
-        'features': [
-          motorTypeController.text,
-          double.parse(temperatureController.text),
-          double.parse(vibrationController.text),
-          double.parse(speedController.text),
-          double.parse(torqueController.text),
-          double.parse(loadController.text),
-          double.parse(currentController.text),
-          double.parse(humidityController.text)
-        ]
+        'action': 'predict',
+        'motor_data': {
+          'motor_type': int.parse(motorTypeController.text),
+          'speed': double.parse(speedController.text),
+          'temperature': double.parse(temperatureController.text),
+          'humidity': double.parse(humidityController.text),
+          'load': double.parse(loadController.text),
+          'current': double.parse(currentController.text),
+          'torque': double.parse(torqueController.text),
+          'vibration': double.parse(vibrationController.text),
+        }
       };
 
       try {
         final response = await http.post(
-          Uri.parse('https://motor-failure-prediction.onrender.com/predict'),
+          Uri.parse('http://a9ad7010f91f9f4088.blackbx.ai/predict'),
           headers: {'Content-Type': 'application/json'},
           body: json.encode(motorData),
         );
@@ -113,9 +114,10 @@ class PredictionFormState extends State<PredictionForm> {
         if (response.statusCode == 200) {
           final data = json.decode(response.body);
           setState(() {
-            failureType = 'Failure Type: ${data['predicted_failure_type']}';
-            remainingLife = 'Remaining Life: ${data['predicted_remaining_life']}';
-            recommendation = 'Recommendation: ${data['recommendation']}';
+            failureType = 'Failure Type: ${data['failure_type']}';
+            // Assuming the API returns remaining life and recommendation
+            remainingLife = 'Remaining Life: ${data['remaining_life'] ?? 'N/A'}';
+            recommendation = 'Recommendation: ${data['recommendations'] ?? 'N/A'}';
           });
         } else {
           setState(() {
